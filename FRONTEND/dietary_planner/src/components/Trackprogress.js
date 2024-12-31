@@ -154,8 +154,9 @@ const TrackProgress = () => {
             <Legend />
           </RadarChart>
         </div>
+        
       </div>
-
+      <br></br>
       
     </div>
   );

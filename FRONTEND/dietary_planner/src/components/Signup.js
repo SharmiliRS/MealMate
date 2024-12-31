@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -6,6 +7,7 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // Store error messages
   const [showPassword, setShowPassword] = useState(false); // Manage password visibility
+  const navigate = useNavigate();
 
   // Validate email to ensure it ends with '@gmail.com'
   const validateEmail = (email) => {
@@ -62,6 +64,7 @@ const validatePassword = (password) => {
 
       if (response.ok) {
         alert(json.message); // Show success message
+        navigate("/signin")
       } else {
         alert(json.message); // Show error message
       }

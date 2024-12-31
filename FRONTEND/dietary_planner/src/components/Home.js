@@ -38,6 +38,9 @@ function Home() {
   return (
     <div>
       <div className="intro">
+      <video className="background-video" autoPlay loop muted>
+        <source src="/images/bg-video.mp4" type="video/mp4" />
+      </video>
         <p>
           MEALMATE
           <br />
