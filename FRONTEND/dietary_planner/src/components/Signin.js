@@ -47,7 +47,7 @@ function Signin() {
         password: password,
       };
 
-      let response = await fetch("http://localhost:8080/signin", {
+      let response = await fetch("https://mealmate-roth.onrender.com/signin", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },

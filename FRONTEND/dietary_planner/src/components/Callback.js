@@ -24,7 +24,7 @@ const Callback = () => {
   const fetchAccessToken = async (authorizationCode) => {
     const clientId = '23PWFN';  // Replace with your Fitbit client ID
     const clientSecret = 'a5a53bb8300ca84193bea3ae2a6d597c';  // Replace with your Fitbit client secret
-    const redirectUri = 'http://localhost:3000/callback';  // Replace with your redirect URI
+    const redirectUri = 'https://mealmate-js.netlify.app/callback';  // Replace with your redirect URI
     // Create the base64-encoded Authorization header
     const authHeader = btoa(`${clientId}:${clientSecret}`);
     

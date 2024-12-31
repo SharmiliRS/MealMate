@@ -51,7 +51,7 @@ const validatePassword = (password) => {
         "password": password,
       };
 
-      let response = await fetch("http://localhost:8080/signup", {
+      let response = await fetch("https://mealmate-roth.onrender.com/signup", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

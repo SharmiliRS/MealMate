@@ -136,7 +136,7 @@ const DisplayData = () => {
 
   // Function to handle connection to wearables (Fitbit OAuth process)
   const handleConnectToWearables = () => {
-    window.location.href = `https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=23PWFN&redirect_uri=http://localhost:3000/callback&scope=activity%20nutrition%20heartrate%20sleep%20profile`;
+    window.location.href = `https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=23PWFN&redirect_uri=https://mealmate-js.netlify.app/callback&scope=activity%20nutrition%20heartrate%20sleep%20profile`;
   };
 // State to store condition and user data
 const [condition, setCondition] = useState("");
@@ -163,7 +163,7 @@ useEffect(() => {
     const medicalConditionsArray = medicalConditions ? medicalConditions.split(',').map(item => item.trim().toLowerCase()) : [];
   
     try {
-      const response = await axios.post('http://localhost:8080/suggest-food', {
+      const response = await axios.post('https://mealmate-roth.onrender.com/suggest-food', {
         maxCalories: maxCalories || undefined,
         ingredients: ingredientsArray.join(','),  // Send as a comma-separated string
         medicalConditions: medicalConditionsArray.join(',')  // Same for medicalConditions
