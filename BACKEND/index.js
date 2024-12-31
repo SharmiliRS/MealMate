@@ -1,15 +1,16 @@
 import express from "express";
 import cors from "cors";
 import { MongoClient } from "mongodb";
-
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.static("public"));
-
+const PORT = process.env.PORT || 8080;
 
 const db_name = "dietary_planner";
-const MONGODB_URL = "mongodb+srv://rssharmili:Sharmili@cluster0.gc3yk.mongodb.net/";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://rssharmili:Sharmili@cluster0.gc3yk.mongodb.net/";
 
 let db;
 let client;
@@ -17,7 +18,12 @@ let client;
 // Connect to MongoDB
 (async () => {
   try {
-    client = new MongoClient(MONGODB_URL);
+    client = new MongoClient(MONGODB_URL, {
+      useNewUrlParser: true, // Ensures the new parser is used (for MongoDB 4.x+)
+      useUnifiedTopology: true, // Ensures new topology engine is used
+      tls: true, // Replaces ssl: true for enabling TLS/SSL
+      tlsInsecure: false, // Ensures certificates are validated
+    });
     await client.connect();
     db = client.db(db_name);
     console.log("Connected to MongoDB");
@@ -203,6 +209,6 @@ app.post('/suggest-food', async (req, res) => {
 
 
 // Start Server
-app.listen(8080, () => {
-  console.log("Server started on http://localhost:8080");
+app.listen(PORT, () => {
+  console.log("Server started...");
 });
