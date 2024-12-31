@@ -1,0 +1,158 @@
+.d-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9CC6B4;
+    height: auto; /* Let content determine height */
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    width: 100%; /* Make it responsive */
+    max-width: 900px;
+    margin-top: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Page Header */
+.d-content {
+    padding: 20px;
+    text-align: center; /* Center align the content */
+}
+
+.d-title {
+    font-size: 2.5rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Dietitians Grid */
+.d-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for responsiveness */
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.d-grid > div {
+    text-align: center;
+    background-color: #9CC6B4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+
+.d-grid > div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.diet-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.d-grid div img:hover {
+    transform: scale(1.1);
+}
+
+.d-grid div p {
+    margin-top: 15px;
+    color: #333;
+}
+.input-grid input:focus{
+    border-color: #21865C;
+    outline: none;
+    box-shadow: 0 0 5px rgba(33, 134, 92, 0.5); /* Highlight the dropdown on focus */
+}
+/* Dropdown styling */
+.gen-dropdown select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Focus state for dropdown */
+.gen-dropdown select:focus {
+    border-color: #21865C;
+    outline: none;
+    box-shadow: 0 0 5px rgba(33, 134, 92, 0.5); /* Highlight the dropdown on focus */
+}
+
+
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .d-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .d-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduce grid column size */
+        gap: 15px;
+    }
+
+    .d-grid > div {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .diet-img {
+        width: 100px;
+        height: 100px;
+    }
+    .gen-dropdown select {
+        font-size: 1rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .d-title {
+        font-size: 1.8rem;
+    }
+
+    .d-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .diet-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .d-grid > div {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .gen-dropdown select {
+        font-size: 0.9rem;
+    }
+}

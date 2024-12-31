@@ -1,0 +1,155 @@
+.payment-form-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #21865C;
+    font-size: 2.0rem;
+  }
+  
+  .payment-method h3,
+  .payment-form h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .payment-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .payment-options button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #21865C; /* Red button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .payment-options button.active {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #21865C; /* Red button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  .payment-options button:hover {
+    cursor: pointer;
+    background-color: #175d42;
+    transform: scale(1.05);
+    color: white;
+  }
+  
+  .payment-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .payment-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    
+  }
+  .payment-form p{
+    text-align: center;
+  }
+  
+  .payment-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  .terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+  }
+  
+  .submit-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color:  #21865C; /* Red button */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-left: 45%;
+  }
+  
+  .submit-btn:hover {
+    cursor: pointer;
+    background-color: #175d42;
+    transform: scale(1.05);
+    color: white;
+  }
+    /* Style for the Amount Dropdown Container */
+.form-group select {
+  width: 100%; /* Makes the dropdown take full width */
+  padding: 10px; /* Adds padding for better spacing */
+  border: 1px solid #ccc; /* Border for the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for better readability */
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Text color */
+  appearance: none; /* Removes default styling for a consistent look */
+  outline: none; /* Removes the default outline */
+  transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+/* Style for Dropdown on Focus */
+.form-group select:focus {
+  border-color: #007bff; /* Highlight border color on focus */
+  background-color: #fff; /* Bright background on focus */
+}
+
+/* Style for Dropdown Error State */
+.form-group .error {
+  color: red; /* Red color for error text */
+  font-size: 14px; /* Slightly smaller font for error messages */
+  margin-top: 5px; /* Space between dropdown and error message */
+}
+
+/* Optional: Add a caret icon for dropdown */
+.form-group select::after {
+  content: "▼"; /* Down arrow icon */
+  position: absolute; /* Positioned over the dropdown */
+  right: 10px; /* Distance from the right edge */
+  pointer-events: none; /* Prevents the arrow from blocking clicks */
+  font-size: 12px; /* Size of the arrow */
+  color: #888; /* Color of the arrow */
+}
+
+/* Additional Styling for Dropdown Container */
+.form-group {
+  position: relative; /* Ensures the arrow stays within the container */
+  margin-bottom: 20px; /* Adds spacing between form fields */
+}
+  

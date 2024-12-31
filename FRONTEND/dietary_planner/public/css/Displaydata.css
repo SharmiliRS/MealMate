@@ -1,0 +1,283 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #9CC6B4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* DisplayData Component Styles */
+.display-data-page {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px;
+  margin: 90px auto 20px;
+  transition: all 0.3s ease;
+}
+
+.display-data-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #21865C;
+}
+
+/* Details Container */
+.details-container {
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.details-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #21865C;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.details-container ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.details-container li {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.details-container li strong {
+  font-weight: 700;
+  color: #21865C;
+}
+
+.details-container p {
+  font-size: 1.2rem;
+  color: black;
+  text-align: center;
+}
+
+.fitbitdata {
+  font-size: 1.2rem;
+  color: #21865C;
+  text-align: center;
+}
+
+/* Suggest Food Form Styles */
+.suggest-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.suggest-food-form label {
+  font-weight: bold;
+  color: #21865C;
+  font-size: 1.2rem;
+}
+
+.suggest-food-form input {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.suggest-food-form input:focus {
+  border-color: #21865C;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Buttons */
+.wearables-btn,
+.suggest-food-btn {
+  background-color: #21865C;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.wearables-btn:hover,
+.suggest-food-btn:hover {
+  background-color: #175d42;
+  transform: scale(1.05);
+}
+.wearables-btn{
+  display: block;
+}
+/* Details Container Food Styling */
+.details-container-food {
+  padding: 30px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.details-container-food h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #21865C;
+}
+
+/* Dropdown Container */
+.dropdown {
+  width: 100%;
+}
+
+.dropdown label {
+  font-weight: bold;
+  color: #21865C;
+  font-size: 1.2rem;
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.dropdown select:focus {
+  border-color: #21865C;
+  outline: none;
+  box-shadow: 0 0 8px rgba(33, 134, 92, 0.2);
+}
+
+.dropdown option {
+  font-size: 1rem;
+  padding: 10px;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .display-data-page {
+    padding: 30px;
+  }
+
+  .display-data-page h1 {
+    font-size: 2rem;
+  }
+
+  .details-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .details-container li {
+    font-size: 1.2rem;
+  }
+
+  .suggest-food-form input {
+    font-size: 1rem;
+  }
+
+  .wearables-btn,
+  .suggest-food-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-data-page {
+    margin: 90px auto;
+    padding: 20px;
+  }
+
+  .display-data-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .details-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .details-container li {
+    font-size: 1rem;
+  }
+
+  .suggest-food-form label {
+    font-size: 1rem;
+  }
+
+  .suggest-food-form input {
+    font-size: 0.9rem;
+  }
+
+  .wearables-btn,
+  .suggest-food-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .display-data-page {
+    padding: 15px;
+    margin-top: 90px;
+  }
+
+  .display-data-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .details-container {
+    padding: 10px;
+  }
+
+  .details-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .details-container li {
+    font-size: 0.9rem;
+  }
+
+  .suggest-food-form label {
+    font-size: 0.9rem;
+  }
+
+  .suggest-food-form input {
+    font-size: 0.8rem;
+  }
+
+  .wearables-btn,
+  .suggest-food-btn {
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+}

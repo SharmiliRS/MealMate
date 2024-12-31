@@ -1,0 +1,178 @@
+
+  
+  .doctor-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers the content vertically */
+    min-height: 100vh; /* Ensures the container spans the full viewport height */
+    margin: 0; /* Removes default margin */
+    padding: 40px; /* Maintains padding */
+    box-sizing: border-box; /* Ensures padding doesn't affect the size */
+  }
+  
+  
+  /* Profile Section */
+  .profile-section {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #e8f5e9; /* Light green background for profile */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 80%;
+    margin: 100px 150px;
+    margin-bottom: 40px;
+  }
+  .profile-section h1{
+    font-size: 24px;
+    color: #21865C;
+    margin-bottom: 15px;
+  }
+  
+  .profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Circular shape */
+    border: 5px solid #2e7d32; /* Green border */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    object-position: bottom; /* Centers the image */
+    display: block;
+    margin: 0 auto; /* Centers the image horizontally */
+  }
+  
+  
+  .doctor-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2e7d32; /* Classic green for name */
+  }
+  
+  .doctor-bio {
+    font-size: 1.1rem;
+    color: #555; /* Slightly lighter gray for bio */
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  /* Chat Section */
+  .chat-section {
+    width: 80%;
+    background-color: #ffffff; /* White for chat background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-title {
+    font-size: 1.5rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Chat Box */
+  .chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Light background for messages */
+    margin-bottom: 20px;
+  }
+  
+  .chat-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    font-size: 1rem;
+    word-wrap: break-word;
+  }
+  
+  /* User and Bot Message Styles */
+  .chat-message.user {
+    background-color: #d1e7dd; /* Light green for user message */
+    color: #155724;
+    align-self: flex-start;
+  }
+  
+  .chat-message.bot {
+    background-color: #f8d7da; /* Light pink for bot message */
+    color: #721c24;
+    align-self: flex-end;
+  }
+  
+  /* Input Area */
+  .input-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .input-area input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-area button {
+    background-color: #ffffff; /* Classic green */
+    color: rgb(117, 156, 101);
+    border: green;
+    
+  }
+  /* General Styling for the Container */
+  .payment-section{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f4f8f5; /* Light green background */
+    border: 1px solid #d4e3d7; /* Subtle green border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-bottom: 70px;
+  }
+  
+  /* Title Styling */
+  .payment-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32; /* Deep green color */
+    margin-bottom: 10px;
+  }
+  
+  /* Description Styling */
+  .payment-description {
+    font-size: 16px;
+    color: #333333; /* Dark text for readability */
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Button Styling */
+  .payment-button {
+    padding: 12px 25px;
+  background-color: #21865C;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+    
+  }
+  .payment-button:hover{
+    cursor: pointer;
+  background-color: #175d42;
+  transform: scale(1.05);
+  color: white;
+  }

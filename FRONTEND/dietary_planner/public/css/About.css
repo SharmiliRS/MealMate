@@ -1,0 +1,207 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
+}
+
+/* About Page Body */
+
+/* About Content */
+.about-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 90px auto 20px auto; /* Center the content on all screen sizes */
+}
+
+/* About Title */
+.about-title {
+  text-align: center;
+  color: #21865C;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* About Description */
+.about-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Mission and Vision */
+.mission-vision {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.mission, .vision {
+  width: 45%;
+  text-align: center;
+}
+
+.mission h2, .vision h2 {
+  color: #21865C;
+  margin-bottom: 10px;
+}
+
+/* Team Section */
+.team-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows grid to adjust on smaller screens */
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center;
+  width: 250px; /* Fixed width for uniform grid items */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  background: #21865C;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* Social Icons */
+footer .social_icon,
+footer .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap; /* Ensures proper layout on smaller screens */
+}
+
+footer .social_icon li,
+footer .menu li {
+  list-style: none;
+}
+
+footer .social_icon li a {
+  font-size: 2.5em;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.3s ease; /* Smoother hover transition */
+}
+
+footer .social_icon li a:hover {
+  transform: translateY(-10px);
+}
+
+footer .menu li a {
+  font-size: 1.2rem;
+  color: antiquewhite;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.3s ease;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+footer .menu li a:hover {
+  opacity: 1;
+  color: white;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+
+/* Adjustments for tablets and medium screens */
+@media (max-width: 768px) {
+  .about-title {
+      font-size: 2rem;
+  }
+
+  .about-content {
+      padding: 20px;
+  }
+
+  .mission, .vision {
+      width: 100%; /* Stack mission and vision on smaller screens */
+      margin-bottom: 20px;
+  }
+
+  .team-grid {
+      gap: 15px; /* Reduce gap between team members */
+  }
+
+  footer .social_icon li a {
+      font-size: 2em; /* Scale down icons */
+  }
+
+  footer .menu li a {
+      font-size: 1rem; /* Adjust footer menu font size */
+  }
+}
+
+/* Adjustments for mobile and small screens */
+@media (max-width: 480px) {
+  .about-title {
+      font-size: 1.8rem;
+  }
+
+  .about-description p {
+      font-size: 1rem;
+      line-height: 1.4;
+  }
+
+  .team-member {
+      width: 100%; /* Full width for team members */
+      margin: 10px 0;
+  }
+
+  footer .social_icon li a {
+      font-size: 1.8em;
+  }
+
+  footer .menu li a {
+      font-size: 0.9rem;
+      margin: 5px; /* Reduce spacing for smaller screens */
+  }
+
+  .copyright {
+      font-size: 0.9rem;
+  }
+}

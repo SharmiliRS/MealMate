@@ -1,0 +1,78 @@
+.chatbot-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 100px auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .chatbot-container h1 {
+    font-size: 24px;
+    color:  #21865C; /* Dr. Alice's theme */
+    margin-bottom: 20px;
+  }
+  
+  .chatbox {
+    background-color: #ffffff;
+    border: 1px solid #267536;
+    border-radius: 10px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  
+  .user-message {
+    background-color: #21865C;
+    color: #ffffff;
+    margin-left: auto;
+    text-align: right;
+  }
+  
+  .bot-message {
+    background-color: #d4e3d7;
+    color: #333333;
+    margin-right: auto;
+    text-align: left;
+  }
+  
+  .chat-input-container {
+    display: flex;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .chat-input-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d4e3d7;
+    border-radius: 5px;
+    
+  }
+  
+  .chat-input-container button {
+    background-color: #21865C;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .chat-input-container button:hover {
+    background-color: #145a24;
+  }
+  
