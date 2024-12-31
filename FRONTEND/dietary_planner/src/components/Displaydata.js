@@ -136,15 +136,8 @@ const DisplayData = () => {
 
   // Function to handle connection to wearables (Fitbit OAuth process)
   const handleConnectToWearables = () => {
-    // Check if running on localhost or in production
-    const redirectUri = window.location.hostname === 'localhost'
-      ? 'http://localhost:3000/callback'  // Local development URL
-      : 'https://mealmate-js.netlify.app/callback';  // Production URL (replace if different)
-  
-    // Redirect to Fitbit authorization page
-    window.location.href = `https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=23PWFN&redirect_uri=${redirectUri}&scope=activity%20nutrition%20heartrate%20sleep%20profile`;
+    window.location.href = `https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=23PWFN&redirect_uri=https://mealmate-js.netlify.app/callback&scope=activity%20nutrition%20heartrate%20sleep%20profile`;
   };
-  
 // State to store condition and user data
 const [condition, setCondition] = useState("");
 
