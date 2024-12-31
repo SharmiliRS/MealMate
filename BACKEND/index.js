@@ -10,7 +10,7 @@ app.use(express.static("public"));
 const PORT = process.env.PORT || 8080;
 
 const db_name = "dietary_planner";
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://rssharmili:Sharmili@cluster0.gc3yk.mongodb.net/";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://rssharmili:Sharmili@cluster0.gc3yk.mongodb.net/dietary_planner?retryWrites=true&w=majority&tls=true";
 
 let db;
 let client;
@@ -18,11 +18,10 @@ let client;
 // Connect to MongoDB
 (async () => {
   try {
-    client = new MongoClient(MONGODB_URL, {
-      useNewUrlParser: true, // Ensures the new parser is used (for MongoDB 4.x+)
-      useUnifiedTopology: true, // Ensures new topology engine is used
-      tls: true, // Replaces ssl: true for enabling TLS/SSL
-      tlsInsecure: false, // Ensures certificates are validated
+    const client = new MongoClient(MONGODB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      tls: true, // Enable TLS/SSL
     });
     await client.connect();
     db = client.db(db_name);
