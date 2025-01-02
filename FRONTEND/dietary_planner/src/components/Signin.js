@@ -59,7 +59,7 @@ function Signin() {
       if (response.ok) {
         alert(json.msg); // Show success message
         localStorage.setItem("isAuthenticated", "true"); // Set auth status
-        navigate("/home"); // Redirect to the Home page
+        navigate("/"); // Redirect to the Home page
       } else {
         alert(json.msg); // Show error message
       }
