@@ -260,4 +260,54 @@ footer .social_icon li p:hover {
   footer .social_icon li p {
     font-size: 3.5em;
   }
+  /* For Small Screens (480px) */
+@media (max-width: 480px) {
+  .intro p {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .intro-details {
+    font-size: 20px;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .intro-details p {
+    font-size: 18px;
+  }
+
+  .grid-intro {
+    font-size: 24px;
+    width: 90%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .imgss {
+    gap: 15px;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  .img-grid p {
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  footer .social_icon li p {
+    font-size: 2em;
+  }
+
+  footer .copyright {
+    font-size: 14px;
+  }
+}
+
 }
