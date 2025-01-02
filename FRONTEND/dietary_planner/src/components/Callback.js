@@ -1,80 +1,92 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import axios from 'axios';  // Axios for making the token request
+import axios from 'axios';
 
 const Callback = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Remove the #_=_ fragment if present
+    if (window.location.hash === "#_=_") {
+      window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+    }
+
+    // Extract the authorization code from URL parameters
     const params = new URLSearchParams(window.location.search);
     const authorizationCode = params.get("code");
-    console.log("Authorization Code:", authorizationCode);  // Log the code
-  
+    console.log("Authorization Code:", authorizationCode); // Log the code for debugging
+
     if (authorizationCode) {
       fetchAccessToken(authorizationCode);
     } else {
       console.error("No authorization code found");
       localStorage.setItem("wearables_status", "failed");
-      navigate("https://mealmate-js.netlify.app/display-data");
+      navigate("/display-data"); // Redirect to the Display Data page
     }
-  }, [location]);
-  
+  }, [location, navigate]);
 
   const fetchAccessToken = async (authorizationCode) => {
-    const clientId = '23PWFN';  // Replace with your Fitbit client ID
-    const clientSecret = 'a5a53bb8300ca84193bea3ae2a6d597c';  // Replace with your Fitbit client secret
-    const redirectUri = 'https://mealmate-js.netlify.app/callback';  // Replace with your redirect URI
+    const clientId = '23PWFN'; // Replace with your Fitbit client ID
+    const clientSecret = 'a5a53bb8300ca84193bea3ae2a6d597c'; // Replace with your Fitbit client secret
+    const redirectUri = 'https://mealmate-js.netlify.app/callback'; // Ensure this matches Fitbit settings
+
     // Create the base64-encoded Authorization header
     const authHeader = btoa(`${clientId}:${clientSecret}`);
-    
-    // Make a POST request to the Fitbit API to exchange code for an access token
+
+    // Fitbit token endpoint
     const tokenUrl = "https://api.fitbit.com/oauth2/token";
+
+    // Request body for token exchange
     const body = new URLSearchParams({
       client_id: clientId,
       client_secret: clientSecret,
       code: authorizationCode,
       redirect_uri: redirectUri,
-      grant_type: "authorization_code"
+      grant_type: "authorization_code",
     });
 
     try {
+      // Make a POST request to exchange the authorization code for tokens
       const response = await axios.post(tokenUrl, body, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          Authorization: `Basic ${authHeader}`, // Add the Basic Auth header
+          Authorization: `Basic ${authHeader}`,
         },
       });
 
-      // Extract access token from the response
+      // Extract tokens and user information from the response
       const { access_token, refresh_token, user_id } = response.data;
 
-      // Store the tokens and user info
+      // Store tokens and user info in localStorage
       localStorage.setItem("fitbit_access_token", access_token);
       localStorage.setItem("fitbit_refresh_token", refresh_token);
       localStorage.setItem("fitbit_user_id", user_id);
 
-      // Set wearables_status to "success" in localStorage
+      // Indicate successful wearable connection
       localStorage.setItem("wearables_status", "success");
 
       console.log("Access Token:", access_token);
       console.log("Refresh Token:", refresh_token);
-      
-      // Redirect the user to the Display page
-      navigate("https://mealmate-js.netlify.app/display-data");
+
+      // Redirect to the Display Data page
+      navigate("/display-data");
     } catch (error) {
-      console.error("Error fetching the access token:", error);
-      // Set wearables_status to "failed" if an error occurs
+      console.error("Error fetching the access token:", error.response?.data || error.message);
+
+      // Indicate failure in connecting to wearables
       localStorage.setItem("wearables_status", "failed");
-      navigate("https://mealmate-js.netlify.app/display-data");  // Navigate to the DisplayData page on failure
+
+      // Redirect to the Display Data page
+      navigate("/display-data");
     }
   };
 
   return (
     <div className="callback-page">
       <style>
-        {
-          `@keyframes spin {
+        {`
+          @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
           }
@@ -105,7 +117,6 @@ const Callback = () => {
             animation: spin 2s linear infinite;
           }
 
-          /* Mobile responsiveness */
           @media (max-width: 768px) {
             .callback-text {
               font-size: 1.5rem;
@@ -117,7 +128,6 @@ const Callback = () => {
             }
           }
 
-          /* Tablet responsiveness */
           @media (max-width: 480px) {
             .callback-text {
               font-size: 1.2rem;
@@ -127,8 +137,8 @@ const Callback = () => {
               width: 35px;
               height: 35px;
             }
-          }`
-        }
+          }
+        `}
       </style>
       <div className="callback-container">
         <div className="callback-text">Redirecting...</div>
