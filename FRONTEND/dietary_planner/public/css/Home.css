@@ -18,42 +18,44 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Add this to ensure proper layout */
+  position: relative;
 }
-.background-video{
+
+.background-video {
   width: 100%;
   object-fit: cover;
-  height: 730px;
+  height: 100%;
 }
+
 .intro p {
   font-size: 64px;
   font-weight: 500;
   color: #ffffff;
   text-align: center;
   line-height: 1.2;
-  transition: all 0.5s ease;
   position: absolute;
   top: 20%;
-  left: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
 }
 
 .intro-details {
   position: absolute;
   top: 70%;
-  left: 55%;
-  transform: translate(-50%, -50%); /* Centering both vertically and horizontally */
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #ffffff;
   font-size: 34px;
   font-weight: 500;
+  text-align: center;
   transition: all 0.5s ease;
 }
-
 
 .intro-details p {
   font-size: 34px;
   font-weight: 500;
   margin-bottom: 10px;
-  transition: all 0.5s ease;
 }
 
 /* Grid Section */
@@ -69,7 +71,6 @@ body {
   margin: 0 auto;
   padding: 40px;
   text-align: center;
-  transition: all 0.5s ease;
 }
 
 .imgss {
@@ -78,20 +79,16 @@ body {
   justify-content: center;
   margin-top: 50px;
   flex-wrap: wrap;
-  transition: all 0.5s ease;
-  
 }
 
 .img-grid {
   text-align: center;
   transition: transform 0.3s ease;
-  
 }
 
 .img-grid p {
   font-size: 30px;
   margin-top: 20px;
-  transition: all 0.5s ease;
 }
 
 .diet:hover, .track:hover, .dietitian:hover {
@@ -112,11 +109,9 @@ footer {
   align-items: center;
   color: white;
   font-size: 18px;
-  transition: all 0.5s ease;
 }
 
-footer .social_icon
- {
+footer .social_icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,8 +119,7 @@ footer .social_icon
   flex-wrap: wrap;
 }
 
-footer .social_icon li
-{
+footer .social_icon li {
   list-style: none;
 }
 
@@ -140,7 +134,6 @@ footer .social_icon li p {
 footer .social_icon li p:hover {
   transform: translateY(-10px);
 }
-
 
 .copyright {
   font-size: 20px;
@@ -157,11 +150,11 @@ footer .social_icon li p:hover {
 
   .intro-details {
     font-size: 24px;
-    top: 70%; /* Adjust to center for mobile */
-    left: 35%;
-    right: 15%;
-    
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
   }
+
   .intro-details p {
     font-size: 20px;
   }
@@ -208,9 +201,9 @@ footer .social_icon li p:hover {
 
   .intro-details {
     font-size: 30px;
-    top: 45%; /* Adjust for tablet screen */
-    left: 45%;
-    right: 10%;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .intro-details p {
@@ -239,5 +232,32 @@ footer .social_icon li p:hover {
 
   footer .menu li p {
     font-size: 22px;
+  }
+}
+
+/* For Larger Screens */
+@media (min-width: 1200px) {
+  .intro p {
+    font-size: 64px;
+  }
+
+  .intro-details {
+    font-size: 38px;
+  }
+
+  .grid-intro {
+    font-size: 40px;
+  }
+
+  .img-grid p {
+    font-size: 32px;
+  }
+
+  footer {
+    font-size: 20px;
+  }
+
+  footer .social_icon li p {
+    font-size: 3.5em;
   }
 }
