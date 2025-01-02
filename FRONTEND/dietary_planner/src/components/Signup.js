@@ -64,7 +64,7 @@ const validatePassword = (password) => {
 
       if (response.ok) {
         alert(json.message); // Show success message
-        navigate("https://mealmate-roth.onrender.com/signin")
+        navigate("/signin")
       } else {
         alert(json.message); // Show error message
       }
