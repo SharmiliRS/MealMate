@@ -16,7 +16,7 @@ const Callback = () => {
     } else {
       console.error("No authorization code found");
       localStorage.setItem("wearables_status", "failed");
-      navigate("/display-data");
+      navigate("https://mealmate-js.netlify.app/display-data");
     }
   }, [location]);
   
@@ -61,12 +61,12 @@ const Callback = () => {
       console.log("Refresh Token:", refresh_token);
       
       // Redirect the user to the Display page
-      navigate("/display-data");
+      navigate("https://mealmate-js.netlify.app/display-data");
     } catch (error) {
       console.error("Error fetching the access token:", error);
       // Set wearables_status to "failed" if an error occurs
       localStorage.setItem("wearables_status", "failed");
-      navigate("/display-data");  // Navigate to the DisplayData page on failure
+      navigate("https://mealmate-js.netlify.app/display-data");  // Navigate to the DisplayData page on failure
     }
   };
 
